@@ -77,7 +77,7 @@
                         <button class="tab-btn" onclick="tmp.tab = 'double'" v-if="player.double_unl">Double</button>
                         <button class="tab-btn" onclick="tmp.tab = 'triple'" v-if="player.triple_unl">Triple</button>
                     </div><br>
-                    <div v-if="player.box_unl && tmp.tab == 'box'">
+                    <div v-if="player.box_unl && tmp.tab == 'box'" style="overflow: auto">
                         You have <h3>{{ format(player.reset,0) }}</h3> Compacted Box, which slows production by <h3>/{{ tmp.penalty.format(0) }}</h3> and
                         gives <h3>{{ tmp.totalResearch.format(0) }}</h3> Research Points.<br><br>
 
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div v-if="tmp.tab == 'double'">
+                    </div><div v-if="tmp.tab == 'double'" style="overflow: auto">
                         You have <h3>{{ format(player.double,0) }}</h3> Double Compacted Box, which makes Compacted Box's penalty <h3>{{ formatPercent(tmp.double_penalty[0]-1,1) }}</h3> stronger and
                         reduces the formula by <h3>/{{ format(tmp.double_penalty[1],1) }}</h3>.
                         <br><br>
@@ -135,7 +135,7 @@
                                 <div v-html="m.desc"></div>
                             </div>
                         </div>
-                    </div><div v-if="tmp.tab == 'triple'">
+                    </div><div v-if="tmp.tab == 'triple'" style="overflow: auto">
                         You have <h3>{{ format(player.triple,0) }}</h3> Triple Compacted Box, which:
                         <br>Makes Double Compacted Box's penalty <h3>{{ formatPercent(tmp.triple_penalty[0]-1,1) }}</h3> stronger;
                         <br>Adds <h3>{{ format(tmp.triple_penalty[1],0) }}</h3> base to Double Compacted Box's penalty <i>(after scaling)</i>;
@@ -163,7 +163,7 @@
                                 <div v-html="m.desc"></div>
                             </div>
                         </div>
-                    </div><div v-if="tmp.tab == 'info'">
+                    </div><div v-if="tmp.tab == 'info'" style="overflow: auto">
                         To unlock informations, you need to get something.
                         <div v-if="player.box_unl">
                             <h2>Compacted Box</h2>
